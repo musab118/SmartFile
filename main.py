@@ -8,7 +8,7 @@ username=(getpass.getuser())
 
 
 
-
+# PDF documents
 def getpdf():
     directory = input("Enter the directory that you want to scan: ")
     directory = directory.strip()
