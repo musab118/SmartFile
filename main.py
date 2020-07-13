@@ -1,7 +1,7 @@
 import os
 import os.path
 import getpass
-import magic
+
 import filetype
 import shutil
 from os import scandir
