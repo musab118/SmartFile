@@ -92,7 +92,6 @@ elif userinput == 'd':
     getpic()
     getpdf()
     getword()
-elif userinput == 'e':
-    extractarchives()
+
 
 
