@@ -2,6 +2,7 @@ import os
 import os.path
 import getpass
 import shutil
+from zipfile import ZipFile
 from os import scandir
 
 
@@ -81,7 +82,7 @@ userinput = userinput.lower()
 
 
 
-if userinput == ('a','pics','photos'):
+if userinput == 'a':
     getpic()
 elif userinput == 'b':
     getword()
@@ -91,5 +92,7 @@ elif userinput == 'd':
     getpic()
     getpdf()
     getword()
+elif userinput == 'e':
+    extractarchives()
 
 
