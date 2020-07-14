@@ -17,7 +17,7 @@ def getpdf():
     directory = directory.strip()
     directory.capitalize()
     documents = [os.listdir(F"/Users/{username}/{directory}")]
-    os.chdir(F"/Users/musabhamid/{directory}")
+    os.chdir(F"/Users/{username}/{directory}")
     print(os.getcwd())
     for items in documents:
         for files in items:
@@ -82,7 +82,7 @@ userinput = userinput.lower()
 
 
 
-if userinput == 'a':
+if userinput == 'a' or 'pics' or 'photos':
     getpic()
 elif userinput == 'b':
     getword()
