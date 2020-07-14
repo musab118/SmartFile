@@ -1,10 +1,11 @@
 import os
 import os.path
 import getpass
-
-import filetype
 import shutil
 from os import scandir
+
+
+
 username=(getpass.getuser())
 
 
@@ -30,6 +31,7 @@ def getpdf():
                 print(F"The following files have been organized: {pdfs}")
 
 
+
 def getword():
     directory = input("Enter the directory that you want to scan: ")
     directory = directory.strip()
@@ -39,7 +41,7 @@ def getword():
     print(os.getcwd())
     for items in documents:
         for files in items:
-            if files.endswith('.docx'):
+            if files.endswith('.docx') or files.endswith('doc') or files.endswith('pages'):
                 if not os.path.isdir(F"/Users/{username}/{directory}/Word_Documents"):
                     os.mkdir(F"/Users/{username}/{directory}/Word_Documents")
                     os.chdir(F"/Users/{username}/{directory}")
@@ -59,7 +61,7 @@ def getpic():
     print(os.getcwd())
     for items in documents:
         for files in items:
-            if files.endswith('.png'):
+            if files.endswith('.png') or files.endswith('jpg') or files.endswith('heic') :
                 if not os.path.isdir(F"/Users/{username}/{directory}/Photos"):
                     os.mkdir(F"/Users/{username}/{directory}/Photos")
                     os.chdir(F"/Users/{username}/{directory}")
@@ -67,22 +69,27 @@ def getpic():
                     os.chdir(F"/Users/{username}/{directory}")
                 photos = files
                 shutil.move(F"/Users/{username}/{directory}/{photos}",F"/Users/{username}/{directory}/Photos/{photos}")
-                print(F"The following files have been organized: {photos}")
+                print(F"The following photos have been organized: {photos}")
 
 
 
 
 userinput = input('Welcome to Smart file! please type which type of files you would like to organize: A for photos, B fpr Word Documents '
-                  'and C for PDFs  ')
+                  'and C for PDFs or type d to organize all files,  ')
 userinput = userinput.strip()
 userinput = userinput.lower()
 
 
 
-if userinput == 'a':
+if userinput == ('a','pics','photos'):
     getpic()
 elif userinput == 'b':
     getword()
 elif userinput == 'c':
     getpdf()
+elif userinput == 'd':
+    getpic()
+    getpdf()
+    getword()
+
 
