@@ -32,7 +32,6 @@ def getpdf():
                 print(F"The following files have been organized: {pdfs}")
 
 
-
 def getword():
     directory = input("Enter the directory that you want to scan: ")
     directory = directory.strip()
@@ -42,7 +41,7 @@ def getword():
     print(os.getcwd())
     for items in documents:
         for files in items:
-            if files.endswith('.docx') or files.endswith('doc') or files.endswith('pages'):
+            if files.endswith('.docx') or files.endswith('.doc'):
                 if not os.path.isdir(F"/Users/{username}/{directory}/Word_Documents"):
                     os.mkdir(F"/Users/{username}/{directory}/Word_Documents")
                     os.chdir(F"/Users/{username}/{directory}")
@@ -80,9 +79,7 @@ userinput = input('Welcome to Smart file! please type which type of files you wo
 userinput = userinput.strip()
 userinput = userinput.lower()
 
-
-
-if userinput == 'a' or 'pics' or 'photos':
+if userinput == 'a':
     getpic()
 elif userinput == 'b':
     getword()
